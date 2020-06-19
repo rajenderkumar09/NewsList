@@ -20,7 +20,7 @@ class NewsListTests: XCTestCase {
 
 	func testArticleViewModel() throws {
 		//Given
-		let article = Article(source: nil, author: "Author Name", title: "News Title", description: "News article description", url: nil, urlToImage: "test.jpg", publishedAt: nil, content: nil)
+		let article = Article(source: nil, author: "Author Name", title: "News Title", description: "News article description", url: nil, urlToImage: "test.jpg", publishedAt: "2020-06-19T05:00:51Z", content: nil)
 
 		//When
 		let articleVM = ArticleViewModel(article: article)
@@ -36,6 +36,7 @@ class NewsListTests: XCTestCase {
 		XCTAssertEqual(articleVM.author, "Author Name")
 		XCTAssertEqual(articleVM.imagePath, "test.jpg")
 		XCTAssertEqual(articleVM.description, "News article description")
+		XCTAssertNotNil(articleVM.publishDate)
 	}
 
 	func testArticleSourceModel() {

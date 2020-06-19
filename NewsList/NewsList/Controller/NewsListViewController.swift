@@ -70,6 +70,7 @@ class NewsListViewController: UIViewController {
 				let newArticles = data?.articles?.map({return ArticleViewModel(article: $0)}) ?? []
 
 				self.articles.append(contentsOf: newArticles)
+
 				//Set Total results count
 				self.totalResults = data?.totalResults ?? 0
 
