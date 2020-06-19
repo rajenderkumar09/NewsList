@@ -28,5 +28,7 @@ NewsList repo is created for demo purpose only and its in progress as of now.
 	7. Wait till Xcode comiples and run the app on the selected device/simulator.
 
 # Improvements Needed/Pendding:
-	1. Add more unit tests for other cases.
-	2. Improve UI Layout - Need to adjusts description to left of the cell below image view.
+  	1. Need to show a text message on the screen if no news is available.
+	2. Unit test cases for other logics and API mocking
+ 	3. UI Improvements: Article cell layout - Align description and Author with image leading margin below the image view based on title text length.
+ 
