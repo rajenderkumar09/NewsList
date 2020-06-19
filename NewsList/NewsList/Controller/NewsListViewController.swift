@@ -67,8 +67,7 @@ class NewsListViewController: UIViewController {
 	func loadMore() {
 		// increment `page` by 1 before server call
 		page += 1
-		print("Load Page: \(page)")
-		self.fetchNews(endPoint: "/v2/top-headlines")
+		self.fetchNews(endPoint: API.headlines)
 	}
 
 	@objc func switchLanguage(_ sender: UIBarButtonItem) {
@@ -89,10 +88,18 @@ class NewsListViewController: UIViewController {
 		//Parameters to be added in the api call
 		let params = ["apiKey":API.key, "pageSize":pageSize, "page":page,"category":"technology", "country": "us"] as [String : Any]
 
+		//Show progress indicator while fetching news data
+		self.showProgressHUD()
+
 		//Call fetchNewsArticles for fetching data using Service Singleton Class
 		Service.shared.fetchNewsArticles(path: endPoint, params: params) { (data, error) in
+
+			//Hide indicator when we got response from the API.
+			self.hideProgressHUD()
+
+			//Check for error
 			if let err = error {
-				print("Error: \(err.localizedDescription)")
+				self.presentAlert(withTitle: "Error", message: err.localizedDescription)
 			} else {
 				//Convert model to ViewModel object and assign to array
 				let newArticles = data?.articles?.map({return ArticleViewModel(article: $0)}) ?? []
