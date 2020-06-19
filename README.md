@@ -28,4 +28,5 @@ NewsList repo is created for demo purpose only and its in progress as of now.
 	7. Wait till Xcode comiples and run the app on the selected device/simulator.
 
 # Improvements Needed/Pendding:
-	1. UI and Unit tests for other cases.
+	1. Add more unit tests for other cases.
+	2. Improve UI Layout - Need to adjusts description to left of the cell below image view.
