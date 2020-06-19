@@ -45,7 +45,7 @@ class NewsListTests: XCTestCase {
 
 		//When
 		let decoder = JSONDecoder()
-		let source = try! decoder.decode(ArticleSource.self, from: sourceData!)
+		let source = try! decoder.decode(Source.self, from: sourceData!)
 
 		//Then
 		XCTAssertEqual(source.id, "1")
