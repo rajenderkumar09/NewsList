@@ -37,4 +37,51 @@ class NewsListTests: XCTestCase {
 		XCTAssertEqual(articleVM.imagePath, "test.jpg")
 		XCTAssertEqual(articleVM.description, "News article description")
 	}
+
+	func testArticleSourceModel() {
+		//Given
+		let sourceString = "{\"id\":\"1\", \"name\": \"Test Source\"}"
+		let sourceData = sourceString.data(using: .utf8)
+
+		//When
+		let decoder = JSONDecoder()
+		let source = try! decoder.decode(ArticleSource.self, from: sourceData!)
+
+		//Then
+		XCTAssertEqual(source.id, "1")
+		XCTAssertEqual(source.name, "Test Source")
+	}
+
+
+	func testArticleModel() {
+		//Given
+		let articleString = """
+		{
+		"source": {
+		"id": "1",
+		"name": "Test Source"
+		},
+		"author": "John Smith",
+		"title": "Covid-19 Spread",
+		"description": "Covid-19 Spread Description",
+		"url": "http://www.google.com",
+		"urlToImage": "https://test.com/1.jpg",
+		"publishedAt": "2020-06-20T10:00:17Z",
+		"content": null
+		}
+		"""
+		let articleData = articleString.data(using: .utf8)
+
+		//When
+		let decoder = JSONDecoder()
+		let article = try! decoder.decode(Article.self, from: articleData!)
+
+		//Then
+		XCTAssertEqual(article.author, "John Smith")
+		XCTAssertEqual(article.title, "Covid-19 Spread")
+		XCTAssertEqual(article.description, "Covid-19 Spread Description")
+		XCTAssertEqual(article.url, "http://www.google.com")
+		XCTAssertEqual(article.urlToImage, "https://test.com/1.jpg")
+		XCTAssertNil(article.content)
+	}
 }
