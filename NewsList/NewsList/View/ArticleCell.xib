@@ -76,13 +76,13 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="MSz-94-Le3" firstAttribute="top" secondItem="Azw-gD-c1I" secondAttribute="bottom" constant="8" id="0XU-hw-ODD"/>
+                    <constraint firstItem="MSz-94-Le3" firstAttribute="top" secondItem="Azw-gD-c1I" secondAttribute="bottom" constant="8" identifier="AuthorStackBottomMargin" id="0XU-hw-ODD"/>
                     <constraint firstItem="rVc-fB-sUn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="2AR-lf-3gz"/>
                     <constraint firstItem="rVc-fB-sUn" firstAttribute="leading" secondItem="zQo-Zh-Oba" secondAttribute="trailing" constant="8" id="34k-c4-Z2b"/>
                     <constraint firstItem="zQo-Zh-Oba" firstAttribute="top" secondItem="rVc-fB-sUn" secondAttribute="top" id="8RO-Vx-8hD"/>
                     <constraint firstItem="rVc-fB-sUn" firstAttribute="trailing" secondItem="Azw-gD-c1I" secondAttribute="trailing" id="D5W-ca-Zz1"/>
                     <constraint firstItem="Azw-gD-c1I" firstAttribute="leading" secondItem="MSz-94-Le3" secondAttribute="leading" id="DDn-dF-Ic8"/>
-                    <constraint firstItem="Azw-gD-c1I" firstAttribute="top" secondItem="rVc-fB-sUn" secondAttribute="bottom" constant="8" id="FH2-12-kT5"/>
+                    <constraint firstItem="Azw-gD-c1I" firstAttribute="top" secondItem="rVc-fB-sUn" secondAttribute="bottom" constant="8" identifier="AuthorStackTopMargin" id="FH2-12-kT5"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zQo-Zh-Oba" secondAttribute="bottom" constant="8" id="Kh2-QP-QbO"/>
                     <constraint firstItem="zQo-Zh-Oba" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="T7l-6n-gDG"/>
                     <constraint firstItem="rVc-fB-sUn" firstAttribute="leading" secondItem="Azw-gD-c1I" secondAttribute="leading" id="V60-Fl-11P"/>
