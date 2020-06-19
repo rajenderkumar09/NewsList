@@ -16,11 +16,8 @@ class ArticleCell: UITableViewCell {
 		didSet {
 
 			//Top bottom constraints
-			let authorStackBottomMargin = self.contentView.constraints.first { (constraint) -> Bool in
-				return constraint.identifier == "AuthorStackBottomMargin"
-			}
-			let authorStackTopMargin = self.contentView.constraints.first { (constraint) -> Bool in
-				return constraint.identifier == "AuthorStackTopMargin"
+			let authorBottomMarginConstraint = self.contentView.constraints.first { (constraint) -> Bool in
+				return constraint.identifier == "AuthorBottomMarginConstraint"
 			}
 
 			//Set title label text
@@ -31,9 +28,8 @@ class ArticleCell: UITableViewCell {
 			titleTextLabel.text = articleViewModel.title
 			if let author = articleViewModel.author {
 
-				//Set top bottom margin of author stack view
-				authorStackTopMargin?.constant = 8
-				authorStackBottomMargin?.constant = 8
+				//Set bottom margin of author stack view
+				authorBottomMarginConstraint?.constant = 8
 
 				//Unhide author Label and authou text label if author name is not null/blank
 				authorLabel.isHidden = false
@@ -42,9 +38,8 @@ class ArticleCell: UITableViewCell {
 				authorTextLabel.text = author
 			} else {
 
-				//Set top margin of author stack view to 0 and keep bottom margin as it is, as we need some vertical space between title and description stack views
-				authorStackTopMargin?.constant = 0
-				authorStackBottomMargin?.constant = 8
+				//Set bottom margin to 0, as we need to decrease margin spacing when author name is blank
+				authorBottomMarginConstraint?.constant = 0
 
 				//Hide author Label and authou text label if author name is blank/null
 				authorLabel.isHidden = true
