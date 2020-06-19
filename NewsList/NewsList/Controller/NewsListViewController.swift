@@ -45,7 +45,7 @@ class NewsListViewController: UIViewController {
 	/// Configure View to display data
 	private func configureView() {
 		//Right bar button title based on current app language
-		let rightButtonTitle = Localize.currentLanguage() == "en" ? "English" : "French"
+		let rightButtonTitle = Localize.currentLanguage() == "en" ? "French" : "English"
 		self.navigationItem.rightBarButtonItem = self.rightBarButton(with: rightButtonTitle)
 
 		//Call method to update and set content of the view
