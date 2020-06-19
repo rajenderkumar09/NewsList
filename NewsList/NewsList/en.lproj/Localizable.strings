@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  NewsList
+  Created by Rajender Sharma on 19/06/20.
+*/
+
+
+//Screen Title
+"Todays News" = "Todays News";
+
+//Cell Static YText
+"Title:" = "Title:";
+"Author:" = "Author:";
+"Description:" = "Description:";

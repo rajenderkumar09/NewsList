@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class NewsListViewController: UIViewController {
 
@@ -41,6 +42,28 @@ class NewsListViewController: UIViewController {
 		loadMore()
     }
 
+	/// Configure View to display data
+	private func configureView() {
+		//Right bar button title based on current app language
+		let rightButtonTitle = Localize.currentLanguage() == "en" ? "English" : "French"
+		self.navigationItem.rightBarButtonItem = self.rightBarButton(with: rightButtonTitle)
+
+		//Call method to update and set content of the view
+		updateContent()
+	}
+
+	private func rightBarButton(with title:String) -> UIBarButtonItem {
+		return UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(switchLanguage(_:)))
+	}
+
+	private func updateContent() {
+		//Set Navigation Bar title
+		self.title = "Todays News".localized()
+
+		//Reload table view
+		self.tableView.reloadData()
+	}
+
 	func loadMore() {
 		// increment `page` by 1 before server call
 		page += 1
@@ -48,12 +71,17 @@ class NewsListViewController: UIViewController {
 		self.fetchNews(endPoint: "/v2/top-headlines")
 	}
 
-	/// Configure View to display data
-	private func configureView() {
-		//Set Navigation Bar title
-		self.title = "Todays News"
-	}
+	@objc func switchLanguage(_ sender: UIBarButtonItem) {
 
+		if Localize.currentLanguage() == "en" {
+			Localize.setCurrentLanguage("fr")
+			sender.title = "French"
+		} else {
+			sender.title = "English"
+			Localize.setCurrentLanguage("en")
+		}
+		self.updateContent()
+	}
 
 	/// Call API for fetching news data from the API
 	/// - Parameter endPoint: name of the API method

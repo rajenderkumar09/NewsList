@@ -7,6 +7,8 @@
 
 import UIKit
 import SDWebImage
+import Localize_Swift
+
 
 class ArticleCell: UITableViewCell {
 
@@ -20,6 +22,11 @@ class ArticleCell: UITableViewCell {
 			let authorStackTopMargin = self.contentView.constraints.first { (constraint) -> Bool in
 				return constraint.identifier == "AuthorStackTopMargin"
 			}
+
+			//Set title label text
+			titleLabel.text = "Title:".localized()
+			authorLabel.text = "Author:".localized()
+			descriptionLabel.text = "Description:".localized()
 
 			titleTextLabel.text = articleViewModel.title
 			if let author = articleViewModel.author {
@@ -64,29 +71,26 @@ class ArticleCell: UITableViewCell {
 	}
 	@IBOutlet weak var titleLabel: UILabel! {
 		didSet {
-			titleLabel.text = "Title: "
 			titleLabel.textAlignment = .right
 			titleLabel.textColor = .black
-			titleLabel.font = UIFont.appFont(with: .medium, size: 17)
+			titleLabel.font = UIFont.appFont(with: .semibold, size: 15)
 			titleLabel.numberOfLines = 1
 		}
 	}
 
 	@IBOutlet weak var authorLabel: UILabel!{
 		didSet {
-			authorLabel.text = "Author: "
 			authorLabel.textAlignment = .right
 			authorLabel.textColor = .black
-			authorLabel.font = UIFont.appFont(with: .medium, size: 17)
+			authorLabel.font = UIFont.appFont(with: .semibold, size: 15)
 			authorLabel.numberOfLines = 1
 		}
 	}
 	@IBOutlet weak var descriptionLabel: UILabel!{
 		didSet {
-			descriptionLabel.text = "Description: "
 			descriptionLabel.textAlignment = .right
 			descriptionLabel.textColor = .black
-			descriptionLabel.font = UIFont.appFont(with: .medium, size: 17)
+			descriptionLabel.font = UIFont.appFont(with: .semibold, size: 15)
 			descriptionLabel.numberOfLines = 1
 		}
 	}
@@ -94,7 +98,7 @@ class ArticleCell: UITableViewCell {
 	@IBOutlet weak var titleTextLabel: UILabel!{
 		didSet {
 			titleTextLabel.text = ""
-			titleTextLabel.textColor = .black
+			titleTextLabel.textColor = .darkGray
 			titleTextLabel.font = UIFont.appFont(with: .regular, size: 15)
 			titleTextLabel.numberOfLines = 0
 		}
@@ -102,7 +106,7 @@ class ArticleCell: UITableViewCell {
 	@IBOutlet weak var authorTextLabel: UILabel!{
 		didSet {
 			authorTextLabel.text = ""
-			authorTextLabel.textColor = .black
+			authorTextLabel.textColor = .darkGray
 			authorTextLabel.font = UIFont.appFont(with: .regular, size: 15)
 			authorTextLabel.numberOfLines = 0
 		}
@@ -110,7 +114,7 @@ class ArticleCell: UITableViewCell {
 	@IBOutlet weak var descriptionTextLabel: UILabel!{
 		didSet {
 			descriptionTextLabel.text = ""
-			descriptionTextLabel.textColor = .black
+			descriptionTextLabel.textColor = .darkGray
 			descriptionTextLabel.font = UIFont.appFont(with: .regular, size: 15)
 			descriptionTextLabel.numberOfLines = 0
 		}

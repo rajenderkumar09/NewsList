@@ -9,7 +9,8 @@ target 'NewsList' do
 
 	pod 'MBProgressHUD'
 	pod 'SDWebImage'
-
+	pod 'Localize-Swift'
+	
   target 'NewsListTests' do
     inherit! :search_paths
     # Pods for testing

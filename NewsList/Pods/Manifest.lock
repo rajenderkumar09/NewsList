@@ -1,22 +1,26 @@
 PODS:
+  - Localize-Swift (3.1.0)
   - MBProgressHUD (1.2.0)
   - SDWebImage (5.7.4):
     - SDWebImage/Core (= 5.7.4)
   - SDWebImage/Core (5.7.4)
 
 DEPENDENCIES:
+  - Localize-Swift
   - MBProgressHUD
   - SDWebImage
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Localize-Swift
     - MBProgressHUD
     - SDWebImage
 
 SPEC CHECKSUMS:
+  Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SDWebImage: 48b88379b798fd1e4298f95bb25d2cdabbf4deb3
 
-PODFILE CHECKSUM: 99b208d042dd782c286d4ed938688bfef51ebc2d
+PODFILE CHECKSUM: 255d60804d4ba44a0e44c13cd86d2e650a2e3851
 
 COCOAPODS: 1.5.3
