@@ -2,7 +2,7 @@
 //  UIViewController+Extension.swift
 //  NewsList
 //
-//  Created by Rajender on 18/06/20.
+//  Created by Rajender Sharma on 18/06/20.
 //  Copyright © 2020 Rajender. All rights reserved.
 //
 

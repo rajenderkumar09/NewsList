@@ -74,9 +74,9 @@ class NewsListViewController: UIViewController {
 
 		if Localize.currentLanguage() == "en" {
 			Localize.setCurrentLanguage("fr")
-			sender.title = "French"
-		} else {
 			sender.title = "English"
+		} else {
+			sender.title = "French"
 			Localize.setCurrentLanguage("en")
 		}
 		self.updateContent()
